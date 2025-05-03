@@ -1,0 +1,419 @@
+/* admin.css */
+
+/* Variables CSS (igual que antes, adaptadas del cliente) */
+:root {
+    --color-primary: #5d4037; /* Marrón oscuro */
+    --color-secondary: #8d6e63; /* Marrón medio */
+    --color-light: #f8f4e9; /* Crema/Beige claro */
+    --color-accent: #a1887f; /* Marrón grisáceo / Acabado */
+    --color-text: #3e2723; /* Marrón muy oscuro / Texto */
+    --color-white: #ffffff; /* Blanco */
+    --color-hero-text: #fff8e1; /* Blanco ligeramente amarillo para texto del hero */
+    --color-details-bg: #f5f5f5; /* Fondo de item-details */
+    --color-item-price-bg: #efebe9; /* Fondo del precio */
+
+    /* Fuentes */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Montserrat', sans-serif;
+    --font-title: 'Playfair Display', serif; /* Títulos de sección */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-body);
+}
+
+body {
+    color: var(--color-text);
+    line-height: 1.6;
+    background-color: var(--color-light);
+    background-image: url('https://cdn.pixabay.com/photo/2016/11/23/15/04/wood-1853403_1280.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    padding-top: 0;
+}
+
+/* Estilos del Header (Adaptados del Hero del cliente) */
+.header {
+    padding: 3rem 1rem 2rem;
+    background: linear-gradient(rgba(40, 33, 23, 0.88), rgba(40, 33, 23, 0.88)),
+                url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 8px solid var(--color-primary);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.hero-content {
+    max-width: 900px;
+    padding: 0 20px;
+}
+
+.restaurant-name {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    color: var(--color-hero-text);
+    margin-bottom: 0.5rem;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9);
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.slogan {
+    font-family: var(--font-body);
+    font-size: 1.3rem;
+    color: #d7ccc8;
+    font-style: italic;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: rgba(93, 64, 55, 0.8);
+    border-radius: 50px;
+    margin-top: 0.5rem;
+    border: 2px solid var(--color-white);
+}
+
+/* Estilos del contenedor principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Estilos de las secciones de administración */
+.admin-section {
+    margin-bottom: 3rem;
+    background: rgba(255, 253, 245, 0.95);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--color-accent);
+    backdrop-filter: blur(5px);
+}
+
+/* Estilos del título de sección */
+.section-title {
+    font-family: var(--font-title);
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-bottom: 2rem;
+    border-bottom: 4px solid var(--color-secondary);
+    padding-bottom: 10px;
+    display: inline-block;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+/* --- ESTILOS PARA LISTAS EN ADMIN --- */
+.admin-items-list,
+.admin-categories-list { /* Estilos comunes para las listas en admin */
+     padding-top: 1rem;
+     display: flex; /* Usamos flexbox para una disposición sencilla */
+     flex-direction: column;
+     gap: 15px; /* Espacio entre items */
+}
+
+
+/* --- ESTILOS PARA LOS ÍTEMS DEL MENÚ EN ADMIN (Adaptados) --- */
+.admin-menu-item {
+    background: var(--color-white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid #d7ccc8;
+    display: flex; /* Flexbox para imagen/info y acciones */
+    align-items: center; /* Centra verticalmente */
+    padding: 1rem;
+    gap: 1rem;
+    flex-wrap: wrap; /* Permite que se envuelvan */
+}
+
+.admin-menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.admin-item-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--color-secondary);
+    flex-shrink: 0;
+}
+
+.admin-item-info {
+     flex-grow: 1;
+     min-width: 200px; /* Ancho mínimo */
+}
+
+.admin-item-name {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    margin-bottom: 0.4rem;
+    color: #4e342e;
+    font-weight: 700;
+}
+
+.admin-item-desc {
+    color: #6d4c41;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 0.6rem;
+    font-style: italic;
+}
+
+.admin-item-price {
+    font-weight: bold;
+    color: var(--color-primary);
+    font-size: 1.1rem;
+    font-family: var(--font-body);
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+
+.admin-item-actions {
+    flex-shrink: 0;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.admin-item-actions button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    white-space: nowrap;
+    text-transform: uppercase;
+    font-weight: bold;
+    opacity: 0.9;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.admin-item-actions button:hover {
+    opacity: 1;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+    color: var(--color-white);
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}
+
+.edit-btn {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+}
+
+.edit-btn:hover {
+    background-color: var(--color-secondary);
+}
+
+
+/* --- ESTILOS PARA LOS ÍTEMS DE CATEGORÍA EN ADMIN (Nuevos estilos) --- */
+.admin-category-item {
+    background: var(--color-secondary);
+    color: var(--color-white);
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.admin-category-item h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-family: var(--font-body); /* O heading si prefieres */
+    color: var(--color-white);
+    flex-grow: 1;
+    min-width: 150px;
+}
+
+.admin-category-actions {
+    flex-shrink: 0;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.admin-category-actions button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--color-text); /* Color de texto oscuro para botones en fondo claro */
+}
+
+.admin-category-actions .edit-cat-btn {
+     background-color: var(--color-white);
+}
+.admin-category-actions .edit-cat-btn:hover {
+     background-color: #eee;
+}
+
+.admin-category-actions .delete-cat-btn {
+     background-color: #ff7b7b; /* Un rojo más suave para categoría */
+}
+.admin-category-actions .delete-cat-btn:hover {
+     background-color: #ff4d4d;
+}
+
+
+/* Estilos para el formulario de agregar/editar plato */
+.admin-form {
+    padding-top: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.8rem;
+    font-weight: bold;
+    color: var(--color-primary);
+    font-size: 1.05rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="url"],
+.form-group textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid var(--color-secondary);
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: var(--font-body);
+    box-sizing: border-box;
+    color: var(--color-text);
+    background-color: var(--color-white);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="url"]:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 8px rgba(161, 136, 127, 0.6);
+}
+
+.admin-form button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    background-color: #2ecc71;
+    color: var(--color-white);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    margin-top: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    opacity: 0.95;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.admin-form button[type="submit"]:hover {
+    background-color: #27ae60;
+    opacity: 1;
+}
+
+
+/* Estilos del footer */
+footer {
+    text-align: center;
+    padding: 3rem 0;
+    background-color: var(--color-primary);
+    color: #efebe9;
+    margin-top: 5rem;
+    border-top: 8px solid var(--color-secondary);
+}
+
+
+/* Media Query para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .header { padding: 2rem 1rem; min-height: 200px; margin-bottom: 2rem; }
+    .restaurant-name { font-size: 2.8rem; letter-spacing: 0.5px; margin-bottom: 0.5rem; }
+    .slogan { font-size: 1.2rem; padding: 8px 15px; margin-top: 0.3rem; }
+    .logo-container { width: 70px; height: 70px; }
+
+    .container { padding: 0 10px; }
+
+    .admin-section { padding: 1.5rem; margin-bottom: 2rem; }
+    .section-title { font-size: 1.8rem; margin-bottom: 1.5rem; padding-bottom: 8px; }
+
+    .admin-items-list, .admin-categories-list {
+         gap: 10px;
+         padding-top: 0.5rem;
+    }
+
+    .admin-menu-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+        gap: 10px;
+    }
+    .admin-item-image { width: 100px; height: 100px; flex-shrink: 0; }
+    .admin-item-info { flex-grow: 1; min-width: 0; width: 100%; }
+    .admin-item-name { font-size: 1.2rem; }
+    .admin-item-desc { font-size: 0.9rem; }
+    .admin-item-price { font-size: 1rem; margin-top: 0.3rem; }
+    .admin-item-actions {
+        width: 100%;
+        justify-content: center;
+        gap: 8px;
+        padding: 0.5rem 0 0; /* Padding solo abajo y sin laterales */
+    }
+    .admin-item-actions button { padding: 8px 12px; font-size: 0.8rem; flex-grow: 0; }
+
+    .admin-category-item {
+         flex-direction: column;
+         align-items: flex-start;
+         padding: 0.8rem;
+         gap: 8px;
+    }
+    .admin-category-item h3 { font-size: 1.1rem; width: 100%; min-width: 0; }
+    .admin-category-actions { width: 100%; justify-content: center; gap: 8px; }
+    .admin-category-actions button { font-size: 0.8rem; padding: 6px 10px; flex-grow: 0; }
+
+
+    .admin-form { padding-top: 0.5rem; }
+    .form-group { margin-bottom: 1rem; }
+    .form-group label { font-size: 1rem; margin-bottom: 0.6rem; }
+    .form-group input[type="text"], .form-group input[type="url"], .form-group textarea { padding: 12px; font-size: 0.95rem; }
+    .admin-form button[type="submit"] { padding: 14px; font-size: 1.1rem; margin-top: 1.5rem; }
+
+    footer { padding: 2rem 0; margin-top: 3rem; }
+     .footer .container { padding: 0 10px; }
+}

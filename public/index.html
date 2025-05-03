@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Sazón Criollo - Menú Digital</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="restaurant-name">Sazón Criollo</h1>
+            <p class="slogan">Una fusión de sabores</p>
+            </div>
+    </section>
+
+    <nav class="category-nav" id="categoryNav">
+        <button class="category-btn active" onclick="scrollToCategory('entradas', event)">Entradas</button>
+         <button class="category-btn" onclick="scrollToCategory('principales', event)">Platos Principales</button>
+         <button class="category-btn" onclick="scrollToCategory('postres', event)">Postres</button>
+         <button class="category-btn" onclick="scrollToCategory('bebidas', event)">Bebidas</button>
+    </nav>
+
+    <main class="container">
+        <section class="menu-section" id="entradas">
+             <div class="section-title">Entradas Campestres</div>
+             <div class="menu-items"> </div>
+        </section>
+
+         <section class="menu-section" id="principales">
+             <div class="section-title">Platos de la Tierra</div>
+             <div class="menu-items"> </div>
+         </section>
+
+         <section class="menu-section" id="postres">
+             <div class="section-title">Dulces Tradiciones</div>
+             <div class="menu-items"> </div>
+         </section>
+
+         <section class="menu-section" id="bebidas">
+             <div class="section-title">Bebidas Tradicionales</div>
+             <div class="menu-items"> </div>
+         </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+             <p>Una fusión de sabores que conecta con nuestras raíces</p>
+             <div class="footer-contact">
+                 <p><i class="fas fa-map-marker-alt"></i> Av. Campestre 123, Pueblo Tradicional</p>
+                 <p><i class="fas fa-clock"></i> Horario: Martes a Domingo 11:00 - 22:00 hrs</p>
+                 <p><i class="fas fa-phone"></i> Reservas: +51 987 654 321</p>
+             </div>
+             <a href="https://wa.me/51987654321" class="whatsapp-btn">
+                 <i class="fab fa-whatsapp"></i> Reservar por WhatsApp
+             </a>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

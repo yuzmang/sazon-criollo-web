@@ -1,0 +1,424 @@
+/* Variables CSS */
+:root {
+    --color-primary: #5d4037; /* Marrón oscuro */
+    --color-secondary: #8d6e63; /* Marrón medio */
+    --color-light: #f8f4e9; /* Crema/Beige claro */
+    --color-accent: #a1887f; /* Marrón grisáceo / Acabado */
+    --color-text: #3e2723; /* Marrón muy oscuro / Texto */
+    --color-white: #ffffff; /* Blanco */
+    --color-hero-text: #fff8e1; /* Blanco ligeramente amarillo para texto del hero */
+    --color-details-bg: #f5f5f5; /* Fondo de item-details */
+    --color-item-price-bg: #efebe9; /* Fondo del precio */
+
+    /* Fuentes */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Montserrat', sans-serif; /* Fuente principal del cuerpo */
+    --font-title: 'Playfair Display', serif;
+    --font-footer-contact: 'Lora', serif; /* Nueva variable para la fuente del footer */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-body); /* Fuente principal aplicada globalmente */
+}
+
+body {
+    color: var(--color-text);
+    line-height: 1.6;
+    background-color: var(--color-light);
+    background-image: url('https://cdn.pixabay.com/photo/2016/11/23/15/04/wood-1853403_1280.jpg'); /* Fondo de madera que funciona */
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    padding-top: 0;
+}
+
+/* Estilos del Header (Sección Hero) */
+.hero {
+    padding: 3rem 1rem;
+    background: linear-gradient(rgba(40, 33, 23, 0.88), rgba(40, 33, 23, 0.88)),
+                url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80'); /* Fondo de platos */
+    background-size: cover;
+    background-position: center;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 8px solid var(--color-primary);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.hero-content {
+    max-width: 900px;
+    padding: 0 20px;
+    animation: fadeIn 1.5s ease;
+}
+
+/* Nombre del restaurante en hero */
+.restaurant-name {
+    font-family: var(--font-heading);
+    font-size: 5rem;
+    color: var(--color-hero-text);
+    margin-bottom: 0.8rem;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9);
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* Slogan en hero */
+.slogan {
+    font-family: var(--font-body);
+    font-size: 1.6rem;
+    color: #d7ccc8;
+    font-style: italic;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: rgba(93, 64, 55, 0.8);
+    border-radius: 50px;
+    margin-top: 0.5rem;
+    border: 2px solid var(--color-white);
+}
+
+/* Estilos de la barra de categorías */
+.category-nav {
+    position: static;
+    width: 100%;
+    background: var(--color-primary);
+    z-index: 1000;
+    display: flex;
+    overflow-x: auto;
+    padding: 12px 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    margin-bottom: 2rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+}
+
+.category-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.category-btn {
+    flex: 0 0 auto;
+    padding: 10px 18px;
+    margin: 0 6px;
+    background: var(--color-light);
+    border-radius: 25px;
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: 1rem;
+    white-space: nowrap;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.category-btn:hover {
+    background: var(--color-secondary);
+    color: var(--color-white);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* Estilos del botón activo */
+.category-btn.active {
+    background: var(--color-accent);
+    color: var(--color-white);
+    border-color: var(--color-light);
+    border-width: 3px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    transform: scale(1.05);
+}
+
+/* Estilos del contenedor principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Estilos de las secciones del menú */
+.menu-section {
+    margin-bottom: 5rem;
+    background: rgba(255, 253, 245, 0.95);
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--color-accent);
+    backdrop-filter: blur(5px);
+     scroll-margin-top: 20px;
+}
+
+/* Estilos del título de sección */
+.section-title {
+    font-family: var(--font-title);
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-bottom: 2.5rem;
+    border-bottom: 4px solid var(--color-secondary);
+    padding-bottom: 12px;
+    display: inline-block;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+/* --- ESTILOS DEL CONTENEDOR GRID PARA LOS ÍTEMS --- */
+.menu-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2.5rem;
+}
+
+/* --- ESTILOS PARA LOS ÍTEMS DEL MENÚ (TARJETAS) --- */
+.menu-item {
+    background: var(--color-white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid #d7ccc8;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.menu-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos de la imagen del ítem */
+.item-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 4px solid var(--color-secondary);
+    display: block;
+}
+
+/* Estilos del contenedor de detalles */
+.item-details {
+    padding: 1.5rem 2rem;
+    background: linear-gradient(to bottom, var(--color-white), var(--color-details-bg));
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Estilos del nombre del plato */
+.item-title {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: #4e342e;
+    font-weight: 700;
+}
+
+/* Estilos de la descripción */
+.item-description {
+    color: #6d4c41;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+/* Estilos del precio */
+.item-price {
+    font-weight: bold;
+    color: var(--color-primary);
+    font-size: 1.3rem;
+    font-family: var(--font-body);
+    background-color: var(--color-item-price-bg);
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid #d7ccc8;
+    margin-top: 0.8rem;
+    align-self: flex-end;
+}
+
+/* Estilos del footer */
+footer {
+    text-align: center;
+    padding: 3rem 0;
+    background-color: var(--color-primary);
+    color: #efebe9;
+    margin-top: 5rem;
+    border-top: 8px solid var(--color-secondary);
+}
+
+/* Contenedor de los datos de contacto en el footer */
+.footer-contact {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Estilos para cada línea de texto de contacto */
+.footer-contact p {
+    font-size: 1.15rem; /* Aumentar ligeramente el tamaño de fuente (de 1rem a 1.15rem) */
+    margin-bottom: 0.7rem; /* Ajustar espacio entre líneas */
+    color: var(--color-light);
+    line-height: 1.4;
+    font-family: var(--font-footer-contact); /* Aplicar la nueva fuente Lora */
+}
+
+/* Eliminar margen inferior de la última línea de contacto */
+.footer-contact p:last-child {
+    margin-bottom: 0;
+}
+
+/* Estilos para los iconos dentro del bloque de contacto */
+.footer-contact i {
+    margin-right: 10px;
+    color: var(--color-secondary);
+    font-size: 1.3rem; /* Aumentar ligeramente el tamaño del icono (de 1.2rem a 1.3rem) */
+    vertical-align: middle;
+}
+
+/* Estilos del botón de WhatsApp */
+.whatsapp-btn {
+    display: inline-block;
+    background: #25D366;
+    color: var(--color-white);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 1rem;
+    transition: background 0.3s ease;
+}
+/* Estilos específicos para el icono de WhatsApp dentro del botón */
+.whatsapp-btn i {
+    margin-right: 8px;
+    font-size: 1.2rem;
+    vertical-align: middle;
+}
+
+.whatsapp-btn:hover {
+    background: #1DA851;
+}
+
+/* Keyframes para animación */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Media Query para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .hero {
+        height: auto;
+        min-height: 250px;
+        padding: 2rem 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .restaurant-name {
+        font-size: 2.8rem;
+        letter-spacing: 0.5px;
+        margin-bottom: 0.5rem;
+    }
+
+    .slogan {
+        font-size: 1.2rem;
+        padding: 8px 15px;
+        margin-top: 0.3rem;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+    .menu-section {
+        padding: 1.5rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .menu-items {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 8px;
+    }
+
+    .item-image {
+        height: 180px;
+    }
+
+    .item-details {
+        padding: 1rem;
+    }
+
+    .item-title {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .item-description {
+        font-size: 0.9rem;
+        line-height: 1.4;
+        margin-bottom: 0.8rem;
+    }
+
+    .item-price {
+        font-size: 1.1rem;
+        padding: 3px 8px;
+        margin-top: 0.5rem;
+    }
+
+    footer {
+        padding: 2rem 0;
+        margin-top: 3rem;
+    }
+
+    .footer .container {
+         padding: 0 10px;
+    }
+
+    /* Ajustes específicos para barra de categorías en móvil */
+    .category-nav {
+        padding: 10px 5px;
+        max-width: 100%;
+        border-radius: 0;
+        margin-bottom: 1.5rem;
+    }
+
+    .category-btn {
+        padding: 8px 12px;
+        margin: 0 4px;
+        font-size: 0.9rem;
+    }
+
+    .category-btn.active {
+        transform: scale(1);
+    }
+
+    /* Ajustes para textos del footer en móvil */
+    .footer-contact p {
+        font-size: 1rem; /* Ajustar tamaño de fuente en móvil */
+        margin-bottom: 0.5rem; /* Ajustar margen */
+    }
+     .footer-contact i {
+         font-size: 1.1rem; /* Ajustar tamaño de icono en móvil */
+         margin-right: 8px; /* Ajustar margen */
+     }
+}

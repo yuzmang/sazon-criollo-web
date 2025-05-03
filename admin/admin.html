@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sazón Criollo - Administración de Menú</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb5TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <header class="header">
+        <div class="hero-content">
+            <div class="logo-container">
+                 <img src="../URL_DE_TU_LOGO.png" alt="Logo Sazón Criollo - Restaurante">
+            </div>
+            <h1 class="restaurant-name">Panel de Administración</h1>
+            <p class="slogan">Gestiona el menú de Sazón Criollo</p>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="menu-section admin-section">
+             <div class="section-title">Gestionar Categorías</div>
+             <div id="existing-categories-container" class="admin-categories-list">
+                 <p>Cargando categorías...</p>
+             </div>
+        </section>
+
+
+        <section class="menu-section admin-section">
+             <div class="section-title">Platos Existentes</div>
+             <div id="existing-dishes-container" class="admin-items-list">
+                 <p>Cargando platos...</p>
+             </div>
+        </section>
+
+        <section class="menu-section admin-section">
+             <div class="section-title">Agregar Nuevo Plato</div>
+             <form id="add-dish-form" class="admin-form">
+                 <div class="form-group">
+                     <label for="dish-category">Categoría ID (ej: entradas, principales):</label>
+                     <input type="text" id="dish-category" required>
+                 </div>
+                  <div class="form-group">
+                     <label for="dish-name">Nombre del Plato:</label>
+                     <input type="text" id="dish-name" required>
+                 </div>
+                 <div class="form-group">
+                     <label for="dish-description">Descripción:</label>
+                     <textarea id="dish-description" rows="3" required></textarea>
+                 </div>
+                 <div class="form-group">
+                     <label for="dish-price">Precio (ej: 5000):</label>
+                     <input type="text" id="dish-price" placeholder="" required>
+                 </div>
+                 <div class="form-group">
+                     <label for="dish-image">URL de la Imagen:</label>
+                     <input type="url" id="dish-image" placeholder="Ej: https://...">
+                 </div>
+
+                 <button type="submit">Agregar Plato</button>
+             </form>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+             <p>&copy; 2023 Sazón Criollo - Administración</p>
+        </div>
+    </footer>
+
+    <script src="admin.js"></script>
+</body>
+</html>
